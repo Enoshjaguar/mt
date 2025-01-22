@@ -8,6 +8,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Landingpage from './pages/LandingPage'
 import SingleBlog from './pages/SingleBlog'
 import ProfilePage from './pages/ProfilePage'
+import UpdateBlog from './forms/UpdateBlog'
 const App = () => {
 
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/' element={<Landingpage/>}/>
         <Route path='/blogs/getblogbyid/:id' element={<SingleBlog/>}/>
         <Route path='user/userbyid/:id' element={<ProfilePage/>}/>
+        <Route path='blogs/updateblogbyid/:id' element={<UpdateBlog/>}/>
       </Routes>
       </BrowserRouter>
       

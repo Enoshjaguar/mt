@@ -237,7 +237,7 @@ body {
 }
 .blogdelete{
   margin-left: 200px;
-  background-color: red;
+ 
   color: black;
 }
 
@@ -619,4 +619,7 @@ body {
   margin-top: 15px;
  
 }
-
+.blogupdatebtn{
+  position: relative;
+  right: 120px;
+}

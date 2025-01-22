@@ -87,4 +87,23 @@ const deleteblogbyid = async(req,res)=>{
     }
 }
 
-module.exports = {addnewblog,getallblogs,getblogbyid,getblogbyuserid,deleteblogbyid}
+const updateblogbyid = async(req,res)=>{
+    const {id} = req.params
+    const updatedData = req.body
+    try{
+        const updatedblog = await Blog.findByIdAndUpdate(id,updatedData,{new:true})
+        if(!updatedblog){
+            console.log("blog not found to update")
+            return res.status(500).json({message:"blog not found to update"})
+        }
+        console.log("blog updated successfully",updatedblog)
+        return res.status(200).json({message:"blog updated successfully"})
+    }
+    catch (error) {
+        console.log("cannot update the blog")
+            return res.status(500).json({message:"cannot update the blog"})
+        
+    }
+}
+
+module.exports = {addnewblog,getallblogs,getblogbyid,getblogbyuserid,deleteblogbyid,updateblogbyid}

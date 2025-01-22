@@ -8,4 +8,5 @@ router.get('/allblogs',blogcontroller.getallblogs)
 router.get('/getblogbyid/:blogid',blogcontroller.getblogbyid)
 router.get('/getblogbyuserid/:id',blogcontroller.getblogbyuserid)
 router.delete('/deleteblogbyid/:id',blogcontroller.deleteblogbyid)
+router.put('/updateblogbyid/:id',blogcontroller.updateblogbyid)
 module.exports = router
