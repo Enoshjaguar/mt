@@ -1,0 +1,11 @@
+const express = require('express')
+const upload = require('../middlewares/multer')
+const router = express.Router()
+const blogcontroller = require('../Controllers/BlogCont')
+const verifyToken = require('../middlewares/verifyToken')
+router.post('/addnewblog', verifyToken, upload.single('file'),blogcontroller.addnewblog)
+router.get('/allblogs',blogcontroller.getallblogs)
+router.get('/getblogbyid/:blogid',blogcontroller.getblogbyid)
+router.get('/getblogbyuserid/:id',blogcontroller.getblogbyuserid)
+router.delete('/deleteblogbyid/:id',blogcontroller.deleteblogbyid)
+module.exports = router

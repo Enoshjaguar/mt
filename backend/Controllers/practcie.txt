@@ -1,0 +1,4 @@
+1231245
+iterate through each num
+take a dict
+if number is 
